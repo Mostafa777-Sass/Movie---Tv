@@ -1,0 +1,37 @@
+<div class="row">
+  <div class="col-md-4 d-flex align-items-center">
+    <h2>Trending Movies <br>
+    Right Now
+    </h2>
+  </div>
+  <div *ngFor="let movie of trendingMovies" class="col-md-2">
+  <a [routerLink]="['/moviedetails',movie.id]">
+     <div class="movie py-1 position-relative">
+     <img [src]="imgprefix+movie.poster_path"class="w-100">
+    <h5 class="p-3">{{movie.title}}</h5>
+    <div class="vote">
+      {{movie.vote_average}}
+    </div>
+    </div></a>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-4 d-flex align-items-center">
+    <h2>Trending TV
+       <br>
+     Right Now
+    </h2>
+  </div>
+  <div *ngFor="let tv of trendingTv" class="col-md-2">
+ <a [routerLink]="['/moviedetails',tv.id]">
+     <div class="movie py-1">
+     <img [src]="imgprefix+tv.poster_path"class="w-100">
+    <h5 class="p-3">{{tv.name}}</h5>
+    <div class="vote">
+      {{tv.vote_average}}
+    </div>
+    </div></a>
+  </div>
+</div>
+
